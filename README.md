@@ -3,20 +3,20 @@
 ![boot2root](https://media.giphy.com/media/UFGj6EYw5JhMQ/giphy.gif)
 
 ## Introduction
-Après tout vos efforts vous allez enfin pouvoir vous amuser !
+After all your efforts you will finally be able to have fun!
 
-Ce projet est donc une base pour vous faire comprendre comment vous devez procéder pour pénétrer un systéme sur lequel vous avez les droits légalement parlant.
+This project is therefore a basis to make you understand how you have to proceed to penetrate a system on which you have legal rights.
 
-Je vous invite fortement à utiliser toutes les méthodes disponibles pour casser cet iso vraiment. La correction sera limité mais votre capacité à pouvoir exploiter votre iso sera grandement récompensée pour vous surtout au delà de votre note
+I strongly urge you to use all available methods to break this iso for real. The fix will be limited but your ability to exploit your iso will be greatly rewarded for you, especially beyond your grade.
 
-## Objectifs
-Ce projet a pour but de vous faire découvrir, via plusieurs petits challenges, la sécurité en informatique dans plusieurs domaines.
+## Objectives
+This project aims to make you discover, through several small challenges, IT security in several areas.
 
-Les méthodes que vous allez utiliser, plus ou moins complexes, vous feront voir différemment les systèmes informatique.
+The methods you will use, more or less complex, will make you see IT systems differently.
 
-Durant ce projet, vous allez surement rencontrer des difficultés : soyons clairs, ces difficultés, il faut que vous les dépassiez de vous-même. Pensez en groupe et surtout amusez-vous bien ! ! ! !
+During this project, you will surely encounter difficulties: let's be clear, these difficulties, you have to overcome them by yourself. Think as a group and above all have fun ! ! !
 
-## Failles
+## Vulnerabilities
 
 | Name | Language | Sources
 |:---------|:--------:|:--------:|
@@ -25,7 +25,7 @@ Durant ce projet, vous allez surement rencontrer des difficultés : soyons clair
 | Writeup3 | [FR](https://github.com/ChokMania/Boot2Root/blob/master/bonus/writeup3.md) | [SysLinux Config](https://wiki.syslinux.org/wiki/index.php?title=Config) / [SysLinux Specials Keys](https://wiki.syslinux.org/wiki/index.php?title=Directives/special_keys) /  [Get root without password (Grub)](https://linoxide.com/linux-how-to/boot-root-shell-prompting-password/)|
 | Writeup4 | [FR](https://github.com/ChokMania/Boot2Root/blob/master/writeup2.md) | [NopeSlide Attack](https://www.0x0ff.info/2015/buffer-overflow-gdb-part1/) / [Shellcode 23 bytes](http://shell-storm.org/shellcode/files/shellcode-827.php)|
 
-## Auteurs
+## Authors
 
 - [Florian Blanchard](https://github.com/floblanc)
 - [Valentin Robert](https://github.com/slumfy)
