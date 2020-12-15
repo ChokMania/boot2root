@@ -1,20 +1,27 @@
-# boot2root [(subjet)](https://cdn.intra.42.fr/pdf/pdf/16396/fr.subject.pdf)
+# boot2root [(subjet)](https://cdn.intra.42.fr/pdf/pdf/16395/en.subject.pdf)
 
 ![boot2root](https://media.giphy.com/media/UFGj6EYw5JhMQ/giphy.gif)
 
 ## Introduction
-After all your efforts you will finally be able to have fun!
+After all this hard work, you will have fun at last !
 
-This project is therefore a basis to make you understand how you have to proceed to penetrate a system on which you have legal rights.
+This project serves as a base so you can understand how to proceed in order penetrate
+a system you can legally access.
 
-I strongly urge you to use all available methods to break this iso for real. The fix will be limited but your ability to exploit your iso will be greatly rewarded for you, especially beyond your grade.
+I suggest you use any existing method in order to really break this iso. Evaluation
+will be limited, but the skill you will show when exploiting your iso will be significantly rewarding for you, way beyond your grade.
 
 ## Objectives
-This project aims to make you discover, through several small challenges, IT security in several areas.
 
-The methods you will use, more or less complex, will make you see IT systems differently.
+This project aims to make you discover computer security within different fields, through
+several easy challenges.
 
-During this project, you will surely encounter difficulties: let's be clear, these difficulties, you have to overcome them by yourself. Think as a group and above all have fun ! ! !
+The more or less complex methods you will use will help you see computer systems
+differently.
+
+You will encounter obstacles during this project, but let’s be clear: you will have to
+overcome these obstacles by yourselves. Think as a group, but first and foremost, have
+fun!!!!
 
 ## Vulnerabilities
 
