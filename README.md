@@ -1,4 +1,4 @@
-# boot2root [(subjet)](https://cdn.intra.42.fr/pdf/pdf/16395/en.subject.pdf)
+# boot2root [(subject)](https://cdn.intra.42.fr/pdf/pdf/16395/en.subject.pdf)
 
 ![boot2root](https://media.giphy.com/media/UFGj6EYw5JhMQ/giphy.gif)
 
