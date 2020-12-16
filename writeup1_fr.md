@@ -59,11 +59,11 @@ On se dirige vers **/forum** où l'on  trouve un topic :
 
 
 On voit que le topic est créé par **lmezard**, et que la page est remplie de logs créés par un admin,
-on cherche donc le nom **lmezard** dans la page, et on tombe sur ceci:
+on cherche donc le nom **lmezard** dans la page, et on tombe sur ceci :
 <pre><code>Oct 5 08:45:29 BornToSecHackMe sshd[7547]: Failed password for invalid user !q\]Ej?*5K5cy*AJ from 161.202.39.38 port 57764 ssh2
 Oct 5 08:45:29 BornToSecHackMe sshd[7547]: Received disconnect from 161.202.39.38: 3: com.jcraft.jsch.JSchException: Auth fail [preauth]
 Oct 5 08:46:01 BornToSecHackMe CRON[7549]: pam_unix(cron:session): session opened for user lmezard by (uid=1040)</code></pre>
->On observe que **lmezard** a tapé son mdp à la place de son login: **!q\]Ej?*5K5cy*AJ**
+> On observe que **lmezard** a tapé son mdp à la place de son login: **!q\]Ej?*5K5cy*AJ**
 
 Par la suite, on se connecte au profil de lmezard sur le forum.
 
@@ -180,7 +180,7 @@ o
 NO SPACE IN THE PASSWORD (password is case sensitive).
 </code></pre>
 
-Et un binaire **./bomb**, qu'on lance:
+Et un binaire **./bomb**, qu'on lance :
 <pre><code>> ./bomb
 Welcome this is my little bomb !!!! You have 6 stages with
 only one life good luck !! Have a nice day!
@@ -311,7 +311,6 @@ On sait que l'on a besoin d'effectuer cette action 6 fois car 6 nombres sont req
 0x08048b5b <+19>:    call   0x8048fd8 <read_six_numbers>
 ```
 
-
 Le résultat pour de la **phase_2** est donc :
 <pre><code>1 2 6 24 120 720</code></pre>
 
@@ -358,7 +357,7 @@ On sait que le résultat attendu sera :
 On sait aussi grâce à l'indice de README que le **%c** est 'b'.
 On cherche donc les deux nombres manquants.
 
-On sait que le premier nombre doit être inférieur a 7:
+On sait que le premier nombre doit être inférieur a 7 :
 <pre><code>0x08048bc9 <+49>:    cmpl   $0x7,-0xc(%ebp)</code></pre>
 
 De plus la ligne ci-dessous effectue un **jump** à l'adresse stockée à l'adresse 
@@ -480,7 +479,7 @@ int main(int ac, char **av)
 }
 ```
 
-À la fin de **phase_4** on compare le return de **func4** avec 55:
+À la fin de **phase_4** on compare le return de **func4** avec 55 :
 <pre><code>   0x08048d1d <+61>:    cmp    $0x37,%eax</code></pre>
 > Apres plusieurs essais avec le code en **C**, on trouve que 9 nous donnes 55.
 
@@ -724,7 +723,7 @@ End of assembler dump.
 ```
 0x08048420 <+44>:	call   0x8048300 <strcpy@plt>
 ```
->strcpy copie et stocke notre premier argument dans la stack sans vérifier si la taille de l'argument correspond à celle du buffer de destination.
+> **strcpy** copie et stocke notre premier argument dans la stack sans vérifier si la taille de l'argument correspond à celle du buffer de destination.
 
 La fonction est donc exploitable par <code>buffer_overflow</code> pour corrompre les valeurs sauvegardées de **%ebp** et **%eip**
 ```

