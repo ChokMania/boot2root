@@ -488,7 +488,7 @@ Le résultat pour de la **phase_4** est donc :
 
 
 ## Phase_5
-```gdb
+```
 (gdb)> disas phase_5
 Dump of assembler code for function phase_5:
    0x08048d2c <+0>:     push   %ebp
